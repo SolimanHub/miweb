@@ -2,27 +2,30 @@
 
 miweb="$1"
 
-if [$miweb == '']; then
+if [ -z $miweb ]; then
   echo "miweb <nombre>"
-else
-  if [-d $miweb]; then
-    echo "ERROR el fichero ya existe"
-  else
-    mkdir -p $miweb/css $miweb/img $miweb/js;
-    touch $miweb/index.html $miweb/css/main.css $miweb/js/main.js
+  exit
+fi
+
+if [ -d $miweb ]; then
+  echo "ERROR el fichero ya existe"
+  exit
+fi
+
+mkdir -p $miweb/css $miweb/img $miweb/js;
+touch $miweb/index.html $miweb/css/main.css $miweb/js/main.js
 cat <<EOF >> $miweb/index.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="author" content="David Soliman Escobar" />
-  <title></title>
-  <link rel="stylesheet" href="css/main.css">
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <script src='js/main.js'></script>
+<script src='js/main.js'></script>
 </body>
 </html>
 EOF
-  fi
-fi
+cd $miweb
+git init
