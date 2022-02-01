@@ -19,6 +19,7 @@ cat <<EOF >> $miweb/index.html
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="author" content="David Soliman Escobar" />
 <title></title>
 <link rel="stylesheet" href="css/main.css">
 </head>
@@ -29,3 +30,11 @@ cat <<EOF >> $miweb/index.html
 EOF
 cd $miweb
 git init
+wget https://necolas.github.io/normalize.css/8.0.1/normalize.css
+mv normalize.css css/
+> k.sh
+cat <<EOF >> k.sh
+#!/usr/bin/bash
+nvim index.html css/main.css js/main.css css/normalize.css 
+EOF
+chmod +x k.sh
