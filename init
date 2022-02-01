@@ -1,0 +1,3 @@
+#!/usr/bin/bash 
+
+sudo ln -s $(pwd)/miweb /usr/bin/miweb
