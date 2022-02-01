@@ -18,13 +18,16 @@ cat <<EOF >> $miweb/index.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="author" content="David Soliman Escobar" />
-<title></title>
-<link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="author" content="David Soliman Escobar" />
+  <title></title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<script src='js/main.js'></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src='js/main.js'></script>
 </body>
 </html>
 EOF
@@ -38,3 +41,45 @@ cat <<EOF >> k.sh
 nvim index.html css/main.css js/main.css css/normalize.css 
 EOF
 chmod +x k.sh
+
+cat <<EOF >> css/main.css
+/*a*/ 
+/*b*/
+/*c*/
+/*d*/
+/*e*/
+/*f*/
+/*g*/
+/*h*/
+/*i*/
+/*j*/
+/*k*/
+/*l*/
+/*m*/
+/*n*/
+/*o*/
+/*p*/
+/*q*/
+/*r*/
+/*s*/
+/*t*/
+/*u*/
+/*v*/
+/*w*/
+/*x*/
+/*y*/
+/*z*/
+EOF
+
+cat <<EOF >> js/main.js
+$(document).ready(function() {
+  $(".class").click(function(){
+    //
+  });
+  document.getElementById('id').style.display = 'none/block';
+}
+
+function name(){
+//
+}
+EOF
