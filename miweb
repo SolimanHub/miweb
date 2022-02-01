@@ -12,7 +12,7 @@ if [ -d $miweb ]; then
   exit
 fi
 
-mkdir -p $miweb/css $miweb/img $miweb/js;
+mkdir -p $miweb/css $miweb/img $miweb/js $miweb/html;
 touch $miweb/index.html $miweb/css/main.css $miweb/js/main.js
 cat <<EOF >> $miweb/index.html
 <!DOCTYPE html>
@@ -34,11 +34,13 @@ EOF
 cd $miweb
 git init
 wget https://necolas.github.io/normalize.css/8.0.1/normalize.css
+wget https://raw.githubusercontent.com/SolimanHub/scraping_css/main/diccionario_css
 mv normalize.css css/
+mv diccionario_css css/
 > k.sh
 cat <<EOF >> k.sh
 #!/usr/bin/bash
-nvim index.html css/main.css js/main.css css/normalize.css 
+nvim index.html css/main.css js/main.css css/diccionario_css 
 EOF
 chmod +x k.sh
 
