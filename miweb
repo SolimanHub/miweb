@@ -40,7 +40,7 @@ mv diccionario_css css/
 > k.sh
 cat <<EOF >> k.sh
 #!/usr/bin/bash
-nvim index.html css/main.css js/main.css css/diccionario_css 
+nvim index.html css/main.css js/main.js css/diccionario_css 
 EOF
 chmod +x k.sh
 
