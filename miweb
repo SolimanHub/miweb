@@ -37,12 +37,12 @@ wget https://necolas.github.io/normalize.css/8.0.1/normalize.css
 wget https://raw.githubusercontent.com/SolimanHub/scraping_css/main/diccionario_css
 mv normalize.css css/
 mv diccionario_css css/
-> k.sh
-cat <<EOF >> k.sh
+> k
+cat <<EOF >> k
 #!/usr/bin/bash
 nvim index.html css/main.css js/main.js css/diccionario_css 
 EOF
-chmod +x k.sh
+chmod +x k
 
 cat <<EOF >> css/main.css
 /*a*/ 
