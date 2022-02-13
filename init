@@ -1,3 +1,13 @@
 #!/usr/bin/bash 
 
+set -e
+
 sudo ln -s $(pwd)/miweb /usr/bin/miweb
+
+cat <<EOF >> k
+#!/usr/bin/bash
+./k
+EOF
+
+sudo chmod +x k
+sudo mv k /usr/bin/
