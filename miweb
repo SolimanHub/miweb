@@ -47,32 +47,51 @@ EOF
 chmod +x k
 
 cat <<EOF >> css/main.css
-/*a*/ 
-/*b*/
-/*c*/
-/*d*/
-/*e*/
-/*f*/
-/*g*/
-/*h*/
-/*i*/
-/*j*/
-/*k*/
-/*l*/
-/*m*/
-/*n*/
-/*o*/
-/*p*/
-/*q*/
-/*r*/
-/*s*/
-/*t*/
-/*u*/
-/*v*/
-/*w*/
-/*x*/
-/*y*/
-/*z*/
+
+/*a - e*/ 
+body {
+  blackground-color: rgba(220, 220, 220, 0.3);
+  margin: 0;
+  padding: 0;
+}
+
+/*f - j*/
+/*k - o*/
+/*p - t*/
+/*u - z*/
+
+@media only screen and (min-width: 1440px) {
+/*a - e*/ 
+/*f - j*/
+/*k - o*/
+/*p - t*/
+/*u - z*/
+}
+
+@media only screen and (min-width: 961px) and (max-width: 1439px) {
+/*a - e*/ 
+/*f - j*/
+/*k - o*/
+/*p - t*/
+/*u - z*/
+}
+
+@media only screen and (min-width: 640px) and (max-width: 960px) {
+/*a - e*/ 
+/*f - j*/
+/*k - o*/
+/*p - t*/
+/*u - z*/
+}
+
+@media only screen and (max-width: 639px) {
+/*a - e*/ 
+/*f - j*/
+/*k - o*/
+/*p - t*/
+/*u - z*/
+}
+
 EOF
 
 cat <<EOF >> js/main.js
