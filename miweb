@@ -52,7 +52,7 @@ mv normalize.css recursos/css/
 touch k
 cat <<EOF >> k
 #!/usr/bin/bash
-nvim index.html css/css_main.css js/js_main.js 
+nvim -p index.html css/css_main.css js/js_main.js 
 EOF
 chmod +x k
 
