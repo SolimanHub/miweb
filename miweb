@@ -59,7 +59,7 @@ chmod +x k
 cat <<EOF >> css/css_main.css
 
 body {
-  blackground-color: rgba(220, 220, 220, 0.3);
+  background-color: rgba(220, 220, 220, 0.3);
   margin: 0;
   padding: 0;
 }
