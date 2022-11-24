@@ -12,8 +12,9 @@ if [ -d $miweb ]; then
   exit
 fi
 
-mkdir -p $miweb/css $miweb/img $miweb/js $miweb/html;
-touch $miweb/index.html $miweb/css/main.css $miweb/js/main.js
+mkdir -p $miweb/css $miweb/js $miweb/html;
+mkdir -p $miweb/recursos/img $miweb/recursos/js $miweb/recursos/css $miweb/recursos/icon;
+touch $miweb/index.html $miweb/css/css_main.css $miweb/js/js_main.js
 touch $miweb/.gitignore
 
 cat <<EOF >> $miweb/index.html
@@ -23,17 +24,17 @@ cat <<EOF >> $miweb/index.html
   <meta charset="UTF-8">
   <meta name="author" content="David Soliman Escobar" />
   <title>$1</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="recursos/css/normalize.css">
+  <link rel="stylesheet" href="css/css_main.css">
 </head>
 <body>
+
   <div class="container">
-    <h1>Vamos con todo! $1</h1>
+    <h1>$1</h1>
   </div> <!-- end container -->
 
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src='js/main.js'></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+  <script src='js/js_main.js'></script>
 </body>
 </html>
 EOF
@@ -45,19 +46,18 @@ cat <<EOF >> .gitignore
 EOF
 
 wget https://necolas.github.io/normalize.css/8.0.1/normalize.css
-wget https://raw.githubusercontent.com/SolimanHub/scraping_css/main/diccionario_css
-mv normalize.css css/
-mv diccionario_css css/
-> k
+#wget https://raw.githubusercontent.com/SolimanHub/scraping_css/main/diccionario_css
+mv normalize.css recursos/css/
+#mv diccionario_css css/
+touch k
 cat <<EOF >> k
 #!/usr/bin/bash
-nvim index.html css/main.css js/main.js css/diccionario_css 
+nvim index.html css/css_main.css js/js_main.js 
 EOF
 chmod +x k
 
-cat <<EOF >> css/main.css
+cat <<EOF >> css/css_main.css
 
-/*a - e*/ 
 body {
   blackground-color: rgba(220, 220, 220, 0.3);
   margin: 0;
@@ -71,54 +71,33 @@ body {
   grid-auto-rows: minmax( 100px auto );
 }
 
-/*f - j*/
-/*k - o*/
-/*p - t*/
-/*u - z*/
-
 @media only screen and (min-width: 1440px) {
-/*a - e*/ 
-/*f - j*/
-/*k - o*/
-/*p - t*/
-/*u - z*/
+/*...*/ 
 }
 
 @media only screen and (min-width: 961px) and (max-width: 1439px) {
-/*a - e*/ 
-/*f - j*/
-/*k - o*/
-/*p - t*/
-/*u - z*/
+/*...*/ 
 }
 
 @media only screen and (min-width: 640px) and (max-width: 960px) {
-/*a - e*/ 
-/*f - j*/
-/*k - o*/
-/*p - t*/
-/*u - z*/
+/*...*/ 
 }
 
 @media only screen and (max-width: 639px) {
-/*a - e*/ 
-/*f - j*/
-/*k - o*/
-/*p - t*/
-/*u - z*/
+/*...*/ 
 }
 
 EOF
 
-cat <<EOF >> js/main.js
-$(document).ready(function() {
-  $(".class").click(function(){
-    //
-  });
-  document.getElementById('id').style.display = 'none/block';
-}
-
-function name(){
-//
-}
-EOF
+#cat <<EOF >> js/js_main.js
+#$(document).ready(function() {
+#  $(".class").click(function(){
+#    //
+#  });
+#  document.getElementById('id').style.display = 'none/block';
+#}
+#
+#function name(){
+#//
+#}
+#EOF
